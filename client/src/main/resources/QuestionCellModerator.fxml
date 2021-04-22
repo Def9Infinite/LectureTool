@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXToggleNode?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox layoutX="10.0" layoutY="10.0" stylesheets="@main.css">
+         <children>
+            <VBox maxHeight="-Infinity" minHeight="-Infinity" prefWidth="40.0">
+               <children>
+                  <JFXToggleNode fx:id="upvoteButton" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#upvote" prefHeight="25.0" prefWidth="40.0" style="-fx-shape: &quot;M150 0 L75 200 L225 200 Z&quot;; -fx-border-color: #000000;" textFill="WHITE">
+                     <selectedColor>
+                        <Color green="0.6501666903495789" blue="0.8299999833106995" />
+                     </selectedColor>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </JFXToggleNode>
+                  <Label fx:id="numUpvotes" alignment="CENTER" prefHeight="18.0" prefWidth="52.0" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <HBox>
+               <HBox.margin>
+                  <Insets left="12.0" />
+               </HBox.margin>
+               <children>
+                  <VBox>
+                     <children>
+                        <Label fx:id="questionText" maxHeight="1.7976931348623157E308" maxWidth="620.0" minWidth="400.0" prefWidth="650.0" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox maxWidth="900.0">
+                           <children>
+                              <JFXTextArea fx:id="answerTextArea" maxHeight="-Infinity" prefRowCount="3" promptText="Write an answer" styleClass="questionAnswerTextArea" wrapText="true" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXTextArea>
+                              <VBox alignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets right="32.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <JFXToggleNode onAction="#answerQuestion" VBox.vgrow="ALWAYS">
+                                       <graphic>
+                                          <ImageView fitHeight="24.0" fitWidth="24.0">
+                                             <image>
+                                                <Image url="@images/send.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXToggleNode>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Label fx:id="userAndTime">
+                           <VBox.margin>
+                              <Insets top="4.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <GridPane hgap="10.0" maxHeight="100.0" maxWidth="142.0" prefHeight="100.0" prefWidth="106.0" vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="7.5" right="7.5" top="10.0" />
+                           </padding>
+                           <children>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" onMouseClicked="#editQuestion" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/Edit_Icon.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="34.0" fitWidth="53.0" onMouseClicked="#deleteQuestion" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                                 <image>
+                                    <Image url="@images/Delete_Icon.png" />
+                                 </image>
+                                 <GridPane.margin>
+                                    <Insets left="4.0" />
+                                 </GridPane.margin>
+                              </ImageView>
+                              <JFXToggleNode fx:id="markAnswerButton" onAction="#markAnswer" prefHeight="26.0" prefWidth="33.0" style="-fx-shape: &quot;M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z&quot;; -fx-border-color: #000000;" GridPane.rowIndex="1">
+                                 <selectedColor>
+                                    <Color green="1.0" />
+                                 </selectedColor>
+                              </JFXToggleNode>
+                              <ImageView fitHeight="45.0" fitWidth="49.0" onMouseClicked="#banUser" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@images/Ban_User.png" />
+                                 </image>
+                                 <GridPane.margin>
+                                    <Insets left="-6.0" right="10.0" />
+                                 </GridPane.margin>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

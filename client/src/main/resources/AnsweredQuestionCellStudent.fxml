@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox>
+         <children>
+            <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="80.0" prefWidth="40.0">
+               <children>
+                   <JFXToggleNode fx:id="upvoteButton" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#upvote" prefHeight="25.0" prefWidth="40.0" style="-fx-shape: &quot;M150 0 L75 200 L225 200 Z&quot;; -fx-border-color: #000000;" textFill="WHITE">
+                     <selectedColor>
+                        <Color green="0.6501666903495789" blue="0.8299999833106995" />
+                     </selectedColor>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                  </JFXToggleNode>
+                  <Label fx:id="numUpvotes" alignment="CENTER" prefHeight="18.0" prefWidth="52.0" />
+               </children>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </VBox>
+            <HBox>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+               <children>
+                  <VBox>
+                     <children>
+                        <Pane fx:id="textPane" maxWidth="620.0" minWidth="600.0" prefHeight="80.0">
+                           <children>
+                              <Label fx:id="questionText" maxWidth="620.0" minWidth="400.0" prefWidth="650.0" wrapText="true">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                        </Pane>
+                        <Pane maxHeight="20.0" prefHeight="200.0">
+                           <children>
+                              <Label fx:id="userAndTime" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="5.0" top="2.0" />
+                           </VBox.margin>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

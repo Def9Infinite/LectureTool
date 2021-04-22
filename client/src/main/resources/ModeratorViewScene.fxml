@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXSnackbar?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.tudelft.oopp.project.controllers.ModeratorViewSceneController">
+   <children>
+      <VBox alignment="CENTER" style="-fx-background-color: #e6e6e6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="115.0" minWidth="-Infinity">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/TU_Delft.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="12.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Text fill="#000000de" strokeType="OUTSIDE" strokeWidth="0.0" text="Questionnaire" textAlignment="CENTER" wrappingWidth="237.73535203933716">
+                     <font>
+                        <Font name="System Bold Italic" size="34.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+            <SplitPane dividerPositions="0.6" VBox.vgrow="ALWAYS">
+               <items>
+                  <VBox>
+                     <children>
+                        <StackPane VBox.vgrow="ALWAYS">
+                           <children>
+                              <JFXTabPane stylesheets="@main.css" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Unanswered questions">
+                                       <content>
+                                          <JFXListView fx:id="questionList" styleClass="custom-jfx-list-view" />
+                                       </content>
+                                    </Tab>
+                                    <Tab closable="false" text="Answered questions">
+                                       <content>
+                                          <JFXListView fx:id="answeredQuestionList" prefHeight="907.0" prefWidth="1036.0" styleClass="custom-jfx-list-view" />
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </JFXTabPane>
+                              <JFXButton maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#refreshQuestions" prefWidth="140.0" ripplerFill="#0d47a1" style="-fx-background-color: #00A6D6;" text="Refresh" textFill="WHITE" StackPane.alignment="TOP_RIGHT">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="542.0" prefWidth="498.0">
+                     <children>
+                        <VBox prefHeight="100.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Text fill="#000000de" strokeType="OUTSIDE" strokeWidth="0.0" text="Lecture Information" textAlignment="LEFT" wrappingWidth="214.73535203933716">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="moderatorToken" editable="false" prefHeight="25.0" prefWidth="478.0" style="-fx-background-color: transparent; -fx-background-insets: 0px;" />
+                              <TextField fx:id="studentToken" editable="false" prefHeight="25.0" prefWidth="478.0" style="-fx-background-color: transparent; -fx-background-insets: 0px;" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="6.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Text fill="#000000de" strokeType="OUTSIDE" strokeWidth="0.0" text="Perceived Lecture Speed" textAlignment="LEFT" wrappingWidth="214.73535203933716">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <BarChart fx:id="lectureSpeedChart" accessibleHelp="Shows perceived lectured speed feedback from students" accessibleText="Lecture speed bar chart" categoryGap="32.0" legendVisible="false" maxHeight="250.0">
+                                <xAxis>
+                                  <CategoryAxis animated="false" side="BOTTOM">
+                                       <tickLabelFont>
+                                          <Font size="10.0" />
+                                       </tickLabelFont>
+                                    </CategoryAxis>
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis minorTickCount="0" side="LEFT" upperBound="200.0" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="6.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Text fill="#000000de" strokeType="OUTSIDE" strokeWidth="0.0" text="Actions" textAlignment="LEFT" wrappingWidth="214.73535203933716">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <FlowPane alignment="CENTER" columnHalignment="CENTER">
+                                 <children>
+                                    <JFXButton fx:id="export" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#exportQuestions" prefHeight="40.0" prefWidth="200.0" ripplerFill="#0d47a1" style="-fx-background-color: #00A6D6;" text="Export questions" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <FlowPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </FlowPane.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="createLog" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#createLog" prefHeight="40.0" prefWidth="200.0" ripplerFill="#0d47a1" style="-fx-background-color: #00A6D6;" text="Create session log" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <FlowPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </FlowPane.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="switchButton" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchView" prefHeight="40.0" prefWidth="200.0" ripplerFill="#0d47a1" style="-fx-background-color: #00A6D6;" text="Switch to Lecturer View" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <FlowPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </FlowPane.margin>
+                                    </JFXButton>
+                                    <JFXButton layoutX="498.0" layoutY="18.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#closeSession" prefHeight="40.0" prefWidth="200.0" ripplerFill="#0d47a1" style="-fx-background-color: #FF3333;" text="Close session" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </FlowPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="6.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Text fill="#000000de" strokeType="OUTSIDE" strokeWidth="0.0" text="Polls" textAlignment="LEFT" wrappingWidth="214.73535203933716">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <JFXTabPane fx:id="pollTabPane" VBox.vgrow="ALWAYS">
+                                 <tabs>
+                                    <Tab text="Create new poll">
+                                      <content>
+                                          <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+                                             <content>
+                                                <VBox prefWidth="100.0">
+                                                   <children>
+                                                      <JFXTextField fx:id="newPollQuestionInput" labelFloat="true" promptText="Question">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="6.0" top="6.0" />
+                                                         </VBox.margin>
+                                                      </JFXTextField>
+                                                      <VBox fx:id="pollCreateListContainer" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                                                      <JFXButton fx:id="createPollButton" onAction="#createNewPoll" ripplerFill="#0d47a1" style="-fx-background-color: #00A6D6;" text="Create poll" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                                         </VBox.margin>
+                                                      </JFXButton>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </content>
+                                          </ScrollPane>
+                                      </content>
+                                    </Tab>
+                                 </tabs>
+                              </JFXTabPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox alignment="BOTTOM_CENTER" VBox.vgrow="SOMETIMES">
+                           <children>
+                              <HBox alignment="BOTTOM_CENTER" prefHeight="60.0">
+                                 <children>
+                                    <JFXSnackbar fx:id="snackbarContainer">
+                                       <HBox.margin>
+                                          <Insets left="24.0" />
+                                       </HBox.margin></JFXSnackbar>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="24.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </items>
+            </SplitPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,53 @@
+.scroll-pane {
+    -fx-padding: 0;
+}
+
+.jfx-tab-pane .tab-selected-line {
+    -fx-pref-height: 0;
+}
+
+.jfx-tab-pane .tab {
+    -fx-background-color:  #00A6D6;
+}
+
+.jfx-tab-pane .tab:selected{
+    -fx-background-color: #0A80B5;
+}
+
+.jfx-tab-pane .depth-container {
+    -fx-effect: none;
+}
+
+
+
+.tab-header-background {
+    -fx-background-color:  #00A6D6;
+}
+
+.jfx-tab-pane .tab-header-area .jfx-rippler{
+    -jfx-rippler-fill: #0d47a1;
+}
+
+.jfx-snackbar-content{
+    -fx-background-color: #000000;
+    -fx-pref-height: 50px;
+}
+.snackbar-label {
+    -fx-text-fill: WHITE;
+    -fx-font-size: 15px;
+}
+
+.chart-bar {
+    -fx-bar-fill: #00A6D6;
+    -fx-max-width: 50px;
+}
+
+.questionAnswerTextArea > .scroll-pane{
+    -fx-hbar-policy:never;
+    -fx-vbar-policy:never;
+}
+
+.questionAnswerIndent .line {
+    -fx-border-color: #0d47a1;
+    -fx-border-width: 0 1 0 0 ;
+}

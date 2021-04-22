@@ -1,0 +1,1 @@
+docker rm -f oopp_postgres

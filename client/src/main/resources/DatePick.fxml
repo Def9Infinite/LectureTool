@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.tudelft.oopp.project.controllers.DatePickController">
+   <children>
+      <VBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+             <HBox alignment="TOP_CENTER">
+                 <children>
+                     <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="500.0">
+                         <children>
+                             <ImageView fitHeight="150.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                     <Image url="@images/TU_Delft.png" />
+                                 </image>
+                                 <VBox.margin>
+                                     <Insets top="12.0" />
+                                 </VBox.margin>
+                             </ImageView>
+                             <Text fill="#000000de" strokeType="OUTSIDE" strokeWidth="0.0" text="Questionnaire" textAlignment="CENTER">
+                                 <font>
+                                     <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                                 <VBox.margin>
+                                     <Insets />
+                                 </VBox.margin>
+                             </Text>
+                             <JFXTextField fx:id="nameField" focusColor="#0d47a1" labelFloat="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="320.0" promptText="Course/Lecture Name">
+                                 <VBox.margin>
+                                     <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                     <Font size="16.0" />
+                                 </font>
+                           <padding>
+                              <Insets top="30.0" />
+                           </padding>
+                             </JFXTextField>
+                        <JFXDatePicker fx:id="date" defaultColor="#00a6d6" prefWidth="320.0" promptText="Select schedule date">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </JFXDatePicker>
+                             <JFXTimePicker fx:id="timepick" defaultColor="#00a6d6" prefWidth="320.0" promptText="Select the start time">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </JFXTimePicker>
+                         </children>
+                     </VBox>
+                 </children>
+             </HBox>
+            <VBox alignment="CENTER">
+               <children>
+                   <JFXButton fx:id="createSessionButton" alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#createSession" prefWidth="200.0" ripplerFill="#0d47a1" style="-fx-background-color: #00A6D6;" text="Schedule lecture!" textFill="WHITE">
+                       <VBox.margin>
+                           <Insets />
+                       </VBox.margin>
+                       <font>
+                           <Font size="16.0" />
+                       </font>
+                   </JFXButton>
+                   <HBox alignment="TOP_CENTER" prefWidth="200.0">
+                       <children>
+                           <Text fill="#000000b2" strokeType="OUTSIDE" strokeWidth="0.0" text="or ">
+                               <font>
+                                   <Font size="14.0" />
+                               </font>
+                               <HBox.margin>
+                                   <Insets />
+                               </HBox.margin>
+                           </Text>
+                           <Text fill="#0e49a1b2" onMouseClicked="#switchCreate" strokeType="OUTSIDE" strokeWidth="0.0" text="create a lecture now" underline="true">
+                               <font>
+                                   <Font size="14.0" />
+                               </font>
+                           </Text>
+                       </children>
+                   </HBox>
+               </children></VBox>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="40.0">
+               <children>
+                       <JFXSnackbar fx:id="snackbarContainer" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane stylesheets="@main.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.tudelft.oopp.project.controllers.HowToJoinSessionController">
+    <children>
+        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/TU_Delft.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </ImageView>
+                <Text fill="#000000de" strokeType="OUTSIDE" strokeWidth="0.0" text="Questionnaire" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold Italic" size="34.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </Text>
+                <Text fill="#000000de" strokeType="OUTSIDE" strokeWidth="0.0" text="Need help?" textAlignment="CENTER">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="24.0" />
+                    </VBox.margin>
+                </Text>
+                <Text fill="#000000de" strokeType="OUTSIDE" strokeWidth="0.0" text="Here you can set your own nickname and paste the invite code for the session you want to join. Then you click the “Join Lecture!” button to enter the session." textAlignment="CENTER" wrappingWidth="450.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </Text>
+            </children>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <JFXButton fx:id="goBackButton" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#goBackToJoin" prefWidth="200.0" ripplerFill="#0d47a1" style="-fx-background-color: #00A6D6;" text="Go Back" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
